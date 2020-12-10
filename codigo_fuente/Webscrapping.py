@@ -8,7 +8,7 @@ def manitas_a_la_obra(texto_limpio):
 
 def fraccionar(texto):
 	lineas = [linea for linea in texto.split('\n') if linea != '']
-	lineas = lineas[87:111]
+	lineas = lineas[87:111]                                                               #El numero se obtuvo de la posicion en el html
 	texto_limpio = '\n'.join(lineas)
 	print(texto_limpio)
 	manitas_a_la_obra(texto_limpio)
@@ -16,7 +16,7 @@ def fraccionar(texto):
 def main():
 	global html
 
-	url = "https://www.fundacionaquae.org/25-curiosidades-sobre-las-especies-marinas/"
+	url = "https://www.fundacionaquae.org/25-curiosidades-sobre-las-especies-marinas/"    #En caso de no funcionar se posee un respaldo
 	page = urlopen(url)
 	html = page.read().decode("utf-8")
 	soup = BeautifulSoup(html, "html.parser")
